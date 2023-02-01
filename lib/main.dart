@@ -81,7 +81,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   //This time tflite(Custom) model is used instead of default mlkit library.
   createLabeler() async {
-    final modelPath = await getModel('assets/ml/mobilenet.tflite');
+    //mobilenet model tflite
+    //final modelPath = await getModel('assets/ml/mobilenet.tflite');
+    //efficientnet model tflite
+    final modelPath = await getModel('assets/ml/efficientnet.tflite');
     final options = LocalLabelerOptions(modelPath: modelPath);
     imageLabeler = ImageLabeler(options: options);
   }
@@ -134,8 +137,6 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: _image != null
                                 ? Image.file(
                                     _image!,
-                                    height: 335,
-                                    width: 495,
                                     fit: BoxFit.fill,
                                   )
                                 : Container(
