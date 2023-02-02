@@ -83,8 +83,14 @@ class _MyHomePageState extends State<MyHomePage> {
   createLabeler() async {
     //mobilenet model tflite
     //final modelPath = await getModel('assets/ml/mobilenet.tflite');
+
     //efficientnet model tflite
-    final modelPath = await getModel('assets/ml/efficientnet.tflite');
+    //final modelPath = await getModel('assets/ml/efficientnet.tflite');
+
+    //Using Trained Model
+    final modelPath =
+        await getModel('assets/ml/fruits_efficientnet_lite4.tflite');
+
     final options = LocalLabelerOptions(modelPath: modelPath);
     imageLabeler = ImageLabeler(options: options);
   }
